@@ -1,14 +1,9 @@
 ﻿using CloudDisk.CoreLibrary.Interfaces;
 using CloudDisk.CoreLibrary.utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CloudDisk.CoreLibrary.StorageProviders
 {
-    public class OneDrive:BaseStorageProvider, ICloudService
+    public class OneDrive : BaseStorageProvider, ICloudService
     {
         public override string ApplicationName
         {
@@ -17,7 +12,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
 
         public override string ClientFolder
         {
-            get 
+            get
             {
                 if (!this.IsInstalled)
                     return "";
@@ -30,7 +25,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
                 else
                 {
                     return RegistryUtils.CurrentUser.Read(AMAZON_CLOUD_PATH);
-                }                    
+                }
             }
         }
         public override long AvaiableMemoryInBytes

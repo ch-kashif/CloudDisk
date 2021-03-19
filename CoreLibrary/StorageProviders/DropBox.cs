@@ -1,10 +1,6 @@
 ﻿using CloudDisk.CoreLibrary.Interfaces;
 using CloudDisk.CoreLibrary.utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace CloudDisk.CoreLibrary.StorageProviders
@@ -20,7 +16,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
         }
         public override string ClientFolder
         {
-            get 
+            get
             {
                 if (!this.IsInstalled)
                     return "";

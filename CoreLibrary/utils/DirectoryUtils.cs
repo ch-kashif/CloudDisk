@@ -14,6 +14,7 @@ namespace CloudDisk.CoreLibrary.utils
             if (Directory.Exists(folderPath))
             {
                 DirectoryInfo di = new DirectoryInfo(folderPath);
+
                 return di.EnumerateFiles("*", SearchOption.AllDirectories).Sum(fi => fi.Length);
             }
             return 0;

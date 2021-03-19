@@ -1,9 +1,5 @@
 ﻿using CloudDisk.CoreLibrary.utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace CloudDisk.CoreLibrary.StorageProviders
@@ -31,8 +27,8 @@ namespace CloudDisk.CoreLibrary.StorageProviders
             {
                 string pathToCheck = this.ClientFolder;
 
-                if(!string.IsNullOrEmpty(pathToCheck))
-                    if (Directory.Exists(pathToCheck)) 
+                if (!string.IsNullOrEmpty(pathToCheck))
+                    if (Directory.Exists(pathToCheck))
                         return true;
 
                 return false;
@@ -50,7 +46,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
             get;
             set;
         }
-        public long UsedMemoryInBytes 
+        public long UsedMemoryInBytes
         {
             get
             {

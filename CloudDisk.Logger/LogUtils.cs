@@ -4,11 +4,11 @@ using System;
 
 namespace CloudDisk.Logger
 {
-    public class LogManager : ILogger
+    public class LogUtils  
     {
-        private readonly ILog logger;
+        private static readonly ILog logger;
 
-        public LogManager()
+        static LogUtils()
         {
             log4net.Config.XmlConfigurator.Configure();
 
@@ -16,17 +16,17 @@ namespace CloudDisk.Logger
 
         }
 
-        public void Debug(string message)
+        public static void Debug(string message)
         {
             Debug(message, null, null);
         }
 
-        public void Debug(string message, params object[] parameters)
+        public static void Debug(string message, params object[] parameters)
         {
             Debug(message, null, parameters);
         }
 
-        public void Debug(string message, Exception ex, params object[] parameters)
+        public static void Debug(string message, Exception ex, params object[] parameters)
         {
             BindParameters(parameters);
             if (ex != null)
@@ -35,17 +35,17 @@ namespace CloudDisk.Logger
                 logger.Debug(message);
         }
 
-        public void Error(string message)
+        public static void Error(string message)
         {
             Error(message, null, null);
         }
 
-        public void Error(string message, params object[] parameters)
+        public static void Error(string message, params object[] parameters)
         {
             Error(message, null, parameters);
         }
 
-        public void Error(string message, Exception ex, params object[] parameters)
+        public static void Error(string message, Exception ex, params object[] parameters)
         {
             BindParameters(parameters);
             if (ex != null)
@@ -54,17 +54,17 @@ namespace CloudDisk.Logger
                 logger.Error(message);
         }
 
-        public void Fatal(string message)
+        public static void Fatal(string message)
         {
             Fatal(message, null, null);
         }
 
-        public void Fatal(string message, params object[] parameters)
+        public static void Fatal(string message, params object[] parameters)
         {
             Fatal(message, null, parameters);
         }
 
-        public void Fatal(string message, Exception ex, params object[] parameters)
+        public static void Fatal(string message, Exception ex, params object[] parameters)
         {
             BindParameters(parameters);
             if (ex != null)
@@ -73,17 +73,17 @@ namespace CloudDisk.Logger
                 logger.Fatal(message);
         }
 
-        public void Info(string message)
+        public static void Info(string message)
         {
             Info(message, null, null);
         }
 
-        public void Info(string message, params object[] parameters)
+        public static void Info(string message, params object[] parameters)
         {
             Info(message, null, parameters);
         }
 
-        public void Info(string message, Exception ex, params object[] parameters)
+        public static void Info(string message, Exception ex, params object[] parameters)
         {
             BindParameters(parameters);
             if (ex != null)
@@ -92,17 +92,17 @@ namespace CloudDisk.Logger
                 logger.Info(message);
         }
 
-        public void Warn(string message)
+        public static void Warn(string message)
         {
             Warn(message, null, null);
         }
 
-        public void Warn(string message, params object[] parameters)
+        public static void Warn(string message, params object[] parameters)
         {
             Warn(message, null, parameters);
         }
 
-        public void Warn(string message, Exception ex, params object[] parameters)
+        public static void Warn(string message, Exception ex, params object[] parameters)
         {
             BindParameters(parameters);
             if (ex != null)
@@ -111,7 +111,7 @@ namespace CloudDisk.Logger
                 logger.Warn(message);
         }
 
-        private void BindParameters(object[] parameters)
+        private static void BindParameters(object[] parameters)
         {
             ThreadContext.Properties.Clear();
             if (parameters == null)
