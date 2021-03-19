@@ -115,18 +115,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CloudDisk.Logger\CloudDisk.Logger.csproj">
+      <Project>{49b1bb7c-fb51-4049-8846-29778b4a24dd}</Project>
+      <Name>CloudDisk.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreLibrary\CloudDisk.CoreLibrary.csproj">
       <Project>{523e0ffa-b650-4591-94bd-b30d756ba092}</Project>
       <Name>CloudDisk.CoreLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="x64\SQLite.Interop.dll" />
+    <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+#Included lib folder for SQL.Interop
+![Li]ib/**
+
+#Ignored Logs Folder
+[Ll]ogs

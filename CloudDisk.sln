@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDisk.CoreLibrary", "CoreLibrary\CloudDisk.CoreLibrary.csproj", "{523E0FFA-B650-4591-94BD-B30D756BA092}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDisk.TestClient", "TestConsoleClient\CloudDisk.TestClient.csproj", "{F1F85E85-33E3-4E4C-8D2D-CCCA5BE7EA80}"
@@ -9,11 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDisk.UnitTest", "Cloud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDisk.TrayIconApplication", "CloudDisk.TrayIconApplication\CloudDisk.TrayIconApplication.csproj", "{5F717209-C629-4336-8960-DB7BA17147F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDisk.Logger", "CloudDisk.Logger\CloudDisk.Logger.csproj", "{49B1BB7C-FB51-4049-8846-29778B4A24DD}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -88,8 +88,31 @@ Global
 		{5F717209-C629-4336-8960-DB7BA17147F8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5F717209-C629-4336-8960-DB7BA17147F8}.Release|x64.ActiveCfg = Release|Any CPU
 		{5F717209-C629-4336-8960-DB7BA17147F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|x64.Build.0 = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{49B1BB7C-FB51-4049-8846-29778B4A24DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A04ED1C-83F8-4A92-AB8A-6CB7A3263FDE}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
