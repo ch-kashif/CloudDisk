@@ -1,17 +1,14 @@
-﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using CloudDisk.CoreLibrary.HelperObjects;
 using CloudDisk.CoreLibrary.Interfaces;
-using CloudDisk.CoreLibrary.HelperObjects;
 using CloudDisk.CoreLibrary.utils;
+using CloudDisk.Logger;
+using System;
+using System.Data;
+using System.IO;
 
 namespace CloudDisk.CoreLibrary.StorageProviders
 {
-    public class CopyDrive: BaseStorageProvider, ICloudService
+    public class CopyDrive : BaseStorageProvider, ICloudService
     {
         public override string ApplicationName
         {
@@ -19,7 +16,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
         }
         public override string ClientFolder
         {
-            get 
+            get
             {
                 if (!this.IsInstalled)
                     return "";
@@ -33,9 +30,9 @@ namespace CloudDisk.CoreLibrary.StorageProviders
                     DataTable dtConfig = db.GetDataTable(sql);
                     return dtConfig.Rows[0]["value"].ToString();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    LogUtils.LogE(ex, "Ignored Exception");
+                    LogUtils.Error("Ignored Exception", ex);
                     return "";
                 }
             }

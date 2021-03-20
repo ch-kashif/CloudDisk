@@ -1,28 +1,26 @@
-﻿using CloudDisk.CoreLibrary.Interfaces;
+﻿using CloudDisk.CoreLibrary.HelperObjects;
+using CloudDisk.CoreLibrary.Interfaces;
 using CloudDisk.CoreLibrary.utils;
+using CloudDisk.Logger;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using CloudDisk.CoreLibrary.HelperObjects;
 using System.Data;
+using System.IO;
 
 namespace CloudDisk.CoreLibrary.StorageProviders
 {
-    public class GoogleDrive: BaseStorageProvider , ICloudService
+    public class GoogleDrive : BaseStorageProvider, ICloudService
     {
         public override string ApplicationName
         {
-            get 
-            { 
-                return "Google Drive"; 
+            get
+            {
+                return "Google Drive";
             }
         }
         public override string ClientFolder
         {
-            get 
+            get
             {
                 if (!this.IsInstalled)
                     return "";
@@ -42,9 +40,9 @@ namespace CloudDisk.CoreLibrary.StorageProviders
                     DataTable dtConfig = db.GetDataTable(sql);
                     return dtConfig.Rows[0]["data_value"].ToString().Substring(4);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    LogUtils.LogE(ex, "Ignored Exception");
+                    LogUtils.Error( "Ignored Exception", ex);
                     return "";
                 }
             }
@@ -54,7 +52,7 @@ namespace CloudDisk.CoreLibrary.StorageProviders
             get
             {
                 string size = RegistryUtils.GoogleDrive.Read(RegistryUtils.AVAILABLE_BYTES);
-                return string.IsNullOrEmpty(size) ? 0 :  long.Parse(size);
+                return string.IsNullOrEmpty(size) ? 0 : long.Parse(size);
             }
             set
             {

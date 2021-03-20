@@ -88,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CloudDisk.Logger\CloudDisk.Logger.csproj">
+      <Project>{49B1BB7C-FB51-4049-8846-29778B4A24DD}</Project>
+      <Name>CloudDisk.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreLibrary\CloudDisk.CoreLibrary.csproj">
       <Project>{523e0ffa-b650-4591-94bd-b30d756ba092}</Project>
       <Name>CloudDisk.CoreLibrary</Name>

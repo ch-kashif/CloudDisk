@@ -108,7 +108,6 @@
     <Compile Include="StorageProviders\OneDrive.cs" />
     <Compile Include="utils\ApplicationSettings.cs" />
     <Compile Include="utils\DirectoryUtils.cs" />
-    <Compile Include="utils\LogUtils.cs" />
     <Compile Include="utils\MirrorUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\RegistryUtils.cs" />
@@ -162,16 +161,18 @@
     <Content Include="Resources\icons\96x96.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="x64\SQLite.Interop.dll" />
+    <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudDisk.Logger\CloudDisk.Logger.csproj">
+      <Project>{49B1BB7C-FB51-4049-8846-29778B4A24DD}</Project>
+      <Name>CloudDisk.Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
